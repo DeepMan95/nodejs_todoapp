@@ -9,7 +9,7 @@ export const sendCookie = (user, res, message, statusCode = 200) => {
       maxAge: 30 * 60 * 1000,
     secure:false,
     sameSite:"none",
-domain:".jittery-turtleneck-yak.cyclic.app	"
+domain:".jittery-turtleneck-yak.cyclic.app",
     })
     .json({
       success: true,
