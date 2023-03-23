@@ -8,7 +8,8 @@ export const sendCookie = (user, res, message, statusCode = 200) => {
       httpOnly: true,
       maxAge: 30 * 60 * 1000,
     secure:true,
-    sameSite:"none"
+    sameSite:"none",
+    path:"/"
     })
     .json({
       success: true,
