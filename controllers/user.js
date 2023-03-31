@@ -7,7 +7,7 @@ export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email }).select("+password");
+    const user = await User.find({ email }).select("+password");
 
     if (!user) return next(new ErrorHandler("Invalid Email or Password", 400));
 
@@ -26,7 +26,7 @@ export const register = async (req, res,next) => {
   try {
     const { name, email, password } = req.body;
 
-    let user = await User.findOne({ email });
+    let user = await User.find({ email });
 
     if (user) return next(new ErrorHandler("User Already Exist", 400));
 
